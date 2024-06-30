@@ -36,22 +36,33 @@ class Doubly_Linked_List_Seq:
         node.item = x
 
     def insert_first(self, x):
-        ###########################
-        # Part (a): Implement me! #
-        ###########################
+        
+        node = Doubly_Linked_List_Node(x)
+        if(self.head==None and self.tail == None ):
+            self.head = node
+            self.tail = node
+        else:    
+            self.head.prev = node
+            node.next = self.head
+            self.head = node
+        
         pass
 
     def insert_last(self, x):
-        ###########################
-        # Part (a): Implement me! #
-        ###########################
+        node = Doubly_Linked_List_Node(x)
+        if(self.head==None and self.tail == None ):
+            self.head = node
+            self.tail = node
+        else:
+            node.prev = self.tail
+            self.tail.next = node
+            self.tail = node
         pass
 
     def delete_first(self):
         x = None
-        ###########################
-        # Part (a): Implement me! #
-        ###########################
+        
+
         return x
 
     def delete_last(self):
