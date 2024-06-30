@@ -4,7 +4,19 @@ def count_long_subarray(A):
     Output: count | number of longest increasing subarrays of A
     '''
     count = 0
-    ##################
-    # YOUR CODE HERE #
-    ##################
+    currentLen = 1
+    maxLen = 1
+    arrLen = len(A)
+    for i in range(1,arrLen):
+        if(A[i-1]<A[i]):
+            currentLen = currentLen + 1
+        else:
+            currentLen = 1    
+        if(maxLen==currentLen):
+                count=count+1
+        elif(currentLen>maxLen):
+             maxLen = currentLen
+             count = 1
+        
+
     return count
